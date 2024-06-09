@@ -1,0 +1,47 @@
+pipeline:
+  transforms:
+    - type: ReadFromPubSub
+      name: Source
+      config:
+        topic: projects/{yourprojectid}/topics/parts_raw
+        format: json
+        schema:
+          type: object
+          properties:
+            part_id: {type: string}
+            point_of_time: {type: string}
+            part_type: {type: string}
+            length: {type: integer}
+            thickness: {type: integer}
+            weights: {type: integer}
+    - type: Filter
+      name: FilterOnEngine
+      config:
+        language: python
+        keep: "part_type == 'piston' or part_type == 'connecting rod' or part_type == 'crankshaft'"
+      input: Source
+    - type: MapToFields
+      name: FaultyStatus
+      config:
+        language: sql
+        append: true
+        fields:
+          status: "CASE WHEN length <= 20 AND length >= 40 THEN 'faulty'              WHEN thickness <= 5 AND thickness >= 10 THEN 'faulty'              WHEN weights <= 200 AND weights >= 600 THEN 'faulty'              ELSE 'not faulty'         END"
+      input: FilterOn Engine
+    - type: WriteToPubSub
+      name: Sink
+      config:
+        topic: projects/{yourprojectid}/topics/parts_status
+        format: json
+      input: FaultyStatus
+    - type: WriteToBigQuery
+      name: Sink 2
+      config:
+        table: {yourprojectid}:sinks.check_result
+        numStreams: 1
+      input: FaultyStatus
+  windowing:
+    type: fixed
+    size: 180
+options:
+  streaming: true
