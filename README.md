@@ -2,7 +2,7 @@
 ## This demo is showing an end to end pipeline processing car part inspection events to report on manufactoring status realtime and report on faulty parts.
 
 ## Step 1 - Streaming Source Data Generation
-Use Streaming Data Generator Dataflow teamplate to generate raw car part inspection events, by using the schema defiition specified in the parts_schema.json file. Output the data stream to a PubSub topic called 'parts_raw'.
+Use [Streaming Data Generator Dataflow teamplate](https://cloud.google.com/dataflow/docs/guides/templates/provided/streaming-data-generator) to generate raw car part inspection events, by using the schema defiition specified in the parts_schema.json file. Output the data stream to a PubSub topic called 'parts_raw'.
 
 ## Step 2 - beamYAML/Visual Job Builder Execution
 Follow the steps outlined in the beam.yaml file to run through the job execution, which includes:
