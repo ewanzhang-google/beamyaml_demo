@@ -1,6 +1,6 @@
 {
     "part_id": "{{guid()}}",
-    "point_of_time": "{{timestamp()}}",
+    "point_in_time": "{{timestamp()}}",
     "part_type": "{{random("piston", "connecting rod", "crankshaft", "gear", "shaft", "clutch", "brake rotor", "brake pad")}}",
     "length": {{integer(15,45)}},
     "thickness": {{integer(4,11)}},

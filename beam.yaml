@@ -9,7 +9,7 @@ pipeline:
           type: object
           properties:
             part_id: {type: string}
-            point_of_time: {type: string}
+            point_in_time: {type: string}
             part_type: {type: string}
             length: {type: integer}
             thickness: {type: integer}
