@@ -17,7 +17,7 @@ Click 'RUN JOB'
 
 
 ## Step 2 - beamYAML/Visual Job Builder Execution
-Option 1: follow the steps outlined in the beam.yaml file to run through the job build, the detailed steps are:
+**Option 1:** follow the steps outlined in the beam.yaml file to run through the job build, the detailed steps are:
 - Go to 'Dataflow'->'Jobs', click 'CREATE JOB FROM TEMPLATE', toggle to 'Job builder'
 - Complete the pipeline steps one by one\
 [Job name]: quality-check\
@@ -58,7 +58,7 @@ Click 'DONE' and 'ADD A SINK' for our second sink\
 Click 'DONE'\
 Leave the rest as it and click 'RUN JOB'
 
-Option 2: load the job directly from the [beam.yaml](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/beam.yaml) file, the detailed steps are:
+**Option 2:** load the job directly from the [beam.yaml](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/beam.yaml) file, the detailed steps are:
 - Replace {yourprojectid} with your project id in the yaml file\
 - Copy the code\
 - Go to 'Dataflow'->'Jobs', click 'CREATE JOB FROM TEMPLATE', toggle to 'Job builder'\
@@ -66,7 +66,7 @@ Option 2: load the job directly from the [beam.yaml](https://github.com/ewanzhan
 - Paste the code in there and click 'LOAD'\
 - Complete the build and click 'RUN JOB'
 
-Option 3: run the gcloud command to execute the local yaml file directly like this:\
+**Option 3:** run the gcloud command to execute the local yaml file directly like this:\
 ```gcloud dataflow yaml run quality-check --yaml-pipeline-file=beam.yaml --region=us-central1```
 
 ## Step 3 - BigQuery Status Check
