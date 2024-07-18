@@ -17,7 +17,7 @@ Click 'RUN JOB'
 
 
 ## Step 2 - beamYAML/Visual Job Builder Execution
-**Option 1:** follow the steps outlined in the beam.yaml file to run through the job build, the detailed steps are:
+**Option 1:** follow the steps outlined in the [beam.yaml](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/beam.yaml) file to run through the job build, the detailed steps are:
 - Go to 'Dataflow'->'Jobs', click 'CREATE JOB FROM TEMPLATE', toggle to 'Job builder'
 - Complete the pipeline steps one by one\
 [Job name]: quality-check\
