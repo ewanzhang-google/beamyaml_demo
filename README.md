@@ -106,4 +106,7 @@ This optional step will set up a Cloud Function service to subscribe to the 'par
 - Create a Cloud Function service using the code snippet in [main.py](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/main.py) and [requirements.txt](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/requirements.txt) files, the Cloud Function will be triggered by events landing in the PubSub topic 'parts_status'
 - Create a log-based metric in Cloud Logging on below filter\
 ```resource.type="cloud_function" AND resource.labels.function_name="faulty_alert" AND severity="ERROR"```
+![s10](/screenshots/s10.png?raw=true)
 - Create an alerting policy on the above metric to count the number of logs in a rolling window of 10 minutes and alert to an email everytime it goes over the threshold of 0
+![s11](/screenshots/s11.png?raw=true)
+![s12](/screenshots/s12.png?raw=true)
