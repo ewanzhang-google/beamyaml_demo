@@ -67,7 +67,6 @@ Leave the rest as it and click 'RUN JOB'
 ![s6](/screenshots/s6.png?raw=true)
 ![s7](/screenshots/s7.png?raw=true)
 ![s8](/screenshots/s8.png?raw=true)
-![s9](/screenshots/s9.png?raw=true)
 
 **Option 2:** load the job directly from the [beam.yaml](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/beam.yaml) file, the detailed steps are:
 - Replace {yourprojectid} with your project id in the yaml file\
@@ -76,6 +75,9 @@ Leave the rest as it and click 'RUN JOB'
 - Find 'LOAD'->'Load from text' at the top right hand side of the UI\
 - Paste the code in there and click 'LOAD'\
 - Complete the build and click 'RUN JOB'
+
+
+![s9](/screenshots/s9.png?raw=true)
 
 **Option 3:** run the gcloud command to execute the local yaml file directly like this:\
 ```gcloud dataflow yaml run quality-check --yaml-pipeline-file=beam.yaml --region=us-central1```
