@@ -29,13 +29,13 @@ pipeline:
           status: "CASE WHEN length <= 20 AND length >= 40 THEN 'faulty'              WHEN thickness <= 5 AND thickness >= 10 THEN 'faulty'              WHEN weights <= 200 AND weights >= 600 THEN 'faulty'              ELSE 'not faulty'         END"
       input: FilterOn Engine
     - type: WriteToPubSub
-      name: Sink
+      name: PubSub
       config:
         topic: projects/{yourprojectid}/topics/parts_status
         format: json
       input: FaultyStatus
     - type: WriteToBigQuery
-      name: Sink 2
+      name: BigQuery
       config:
         table: {yourprojectid}:sinks.check_result
         numStreams: 1
