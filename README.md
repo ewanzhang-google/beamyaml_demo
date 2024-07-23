@@ -16,6 +16,7 @@ Tick 'Enable Streaming Engine'\
 Click 'RUN JOB'
 
 ![s1](/screenshots/s1.png?raw=true)
+![s2](/screenshots/s2.png?raw=true)
 
 
 ## Step 2 - beamYAML/Visual Job Builder Execution
@@ -59,6 +60,14 @@ Click 'DONE' and 'ADD A SINK' for our second sink\
 [Pub/Sub topic]: create a new topic called parts_status\
 Click 'DONE'\
 Leave the rest as it and click 'RUN JOB'
+
+![s3](/screenshots/s3.png?raw=true)
+![s4](/screenshots/s4.png?raw=true)
+![s5](/screenshots/s5.png?raw=true)
+![s6](/screenshots/s6.png?raw=true)
+![s7](/screenshots/s7.png?raw=true)
+![s8](/screenshots/s8.png?raw=true)
+![s9](/screenshots/s9.png?raw=true)
 
 **Option 2:** load the job directly from the [beam.yaml](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/beam.yaml) file, the detailed steps are:
 - Replace {yourprojectid} with your project id in the yaml file\
