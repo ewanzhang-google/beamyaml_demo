@@ -101,11 +101,9 @@ ORDER BY timeunit;
 
 
 ## (Optional) Step 4 - Cloud Function Notification Alert
-First of all refer to the online guide to create SendGrid account and api keys (in my case sending email from my personal gmail account will remove the security restriction otherwise experienced with corporate emails). 
+This optional step will set up a Cloud Function service to subscribe to the 'parts_status' topic and log an error whenever it sees a faulty part. And we can be notified once we create an alerting policy on our custom log metric. The detailed steps are as follows:
 
-Once the configuration is complete on SendGrid proceed to creating a Cloud Function using the code snippet in [main.py](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/main.py) and [requirements.txt](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/requirements.txt) files, the Cloud Function will be triggered by events landing in the PubSub topic 'parts_status'
-
-The alert email will look like this:
-
-Title: "Faulty Parts Alert"\
-Body: "The following parts are faulty:33cb9ba7-1f0f-451f-ac4c-aafda52bfa9f"
+- Create a Cloud Function service using the code snippet in [main.py](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/main.py) and [requirements.txt](https://github.com/ewanzhang-google/beamyaml_demo/blob/main/requirements.txt) files, the Cloud Function will be triggered by events landing in the PubSub topic 'parts_status'
+- Create a log-based metric in Cloud Logging on below filter\
+```resource.type="cloud_function" AND resource.labels.function_name="faulty_alert" AND severity="ERROR"```
+- Create an alerting policy on the above metric to count the number of logs in a rolling window of 10 minutes and alert to an email everytime it goes over the threshold of 0
