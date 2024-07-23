@@ -15,7 +15,7 @@ Tick 'Enable Streaming Engine'\
 [Output Pub/Sub topic]: create new topic parts_raw\
 Click 'RUN JOB'
 
-!(/screenshots/s1.png?raw=true)
+!(screenshots/s1.png?raw=true)
 
 
 ## Step 2 - beamYAML/Visual Job Builder Execution
