@@ -27,7 +27,7 @@ pipeline:
         append: true
         fields:
           status: "CASE WHEN length <= 20 OR length >= 40 THEN 'faulty'              WHEN thickness <= 5 OR thickness >= 10 THEN 'faulty'              WHEN weights <= 200 OR weights >= 600 THEN 'faulty'              ELSE 'not faulty'         END"
-      input: FilterOn Engine
+      input: FilterOnEngine
     - type: WriteToPubSub
       name: PubSub
       config:
