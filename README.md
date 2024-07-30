@@ -31,7 +31,7 @@ Click 'RUN JOB'
 [Pub/Sub topic]: choose the topic we created above parts_raw\
 [Message schema]: fill out the field names and types are below:\
 part_id: {type: string}\
-point_of_time: {type: string}\
+point_in_time: {type: string}\
 part_type: {type: string}\
 length: {type: integer}\
 thickness: {type: integer}\
@@ -47,7 +47,7 @@ Click 'DONE' and 'ADD A TRANSFORM' for our second transform\
 Choose 'Preserve existing fields'\
 Click 'ADD A FIELD'\
 [Field name]: status\
-[SQL expression]: CASE WHEN length <= 20 AND length >= 40 THEN 'faulty'  WHEN thickness <= 5 AND thickness >= 10 THEN 'faulty'  WHEN weights <= 200 AND weights >= 600 THEN 'faulty'  ELSE 'not faulty' END\
+[SQL expression]: CASE WHEN length <= 20 OR length >= 40 THEN 'faulty'  WHEN thickness <= 5 OR thickness >= 10 THEN 'faulty'  WHEN weights <= 200 OR weights >= 600 THEN 'faulty'  ELSE 'not faulty' END\
 Click 'DONE' and 'DONE'\
 **Sinks:**\
 Click 'ADD A SINK' for our first sink\
